@@ -46,6 +46,5 @@ int main()
         cout << *i << " ";
     }
     value.clear();
-    cout << endl
-         << value.size() << endl;
+    cout << endl << value.size() << endl;
 }

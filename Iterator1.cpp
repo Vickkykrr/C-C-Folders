@@ -22,21 +22,22 @@ int main()
     auto l= next(Test1,2);
     cout << *l <<"\n";
 
-    //advance(Test1, 5);
+    advance(Test1, 5);
 
     l= next(Test1,2);
-    cout << *l <<"\n";
+    cout << *l << "\n";
 
     copy(Demo2.begin(), Demo2.end(), inserter(Demo, Test1));
-
-    for (int i : Demo)
+    for(Test1=Demo.begin();Test1!=Demo.end();Test1++)
     {
-        cout << i << " ";
+        cout << *Test1 << " ";
     }
+    // for (int i : Demo)
+    // {
+    //     cout << i << " ";
+    // }
     // for(int &i : Demo)
     // {
     //     cout << i << " ";
     // }
-    
-    
 }
