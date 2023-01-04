@@ -1,16 +1,14 @@
 #include <iostream>
 
-using std ::cout;
-
 void Increment(int value1, int value2)
 {
-    cout << "Incremented  "
+    std :: cout << "Incremented  "
          << value1 + value2 << "\n";
 }
 
 void Decrement(int value1, int value2)
 {
-    cout << "Decremented "
+    std :: cout << "Decremented "
          << value1 - value2 << "\n";
 }
 
@@ -22,7 +20,7 @@ void Operation(void (*Ptr)(int value1, int value2))
 int main()
 {
     Operation(&Increment);
-    cout << "Increment is Done\n";
+    std :: cout << "Increment is Done\n";
     Operation(&Decrement);
-    cout << "Decrement is Done\n";
+    std :: cout << "Decrement is Done\n";
 }

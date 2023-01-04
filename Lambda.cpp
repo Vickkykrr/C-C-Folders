@@ -11,8 +11,8 @@ int main()
 {
     int variable = 10, value = 20, size = 30;
 
-    //auto NewFunction = [&](int value, int size)
-    function<void(int,int)> NewFunction = [&](int value, int size)
+    // auto NewFunction = [](int value, int size)
+    std :: function<void(int, int)> NewFunction = [&](int value, int size)
     {
         int result = 0;
         result = variable + size + value;

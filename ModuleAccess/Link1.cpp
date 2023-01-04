@@ -1,10 +1,11 @@
-#include<Link1.hpp>
-void Swap(int a, int b)
-    {
-        a = a + b;
-        b = a - b;
-        a = a - b;
-        cout << "Swapped Elemnets" << endl
-             << " A : " << a
-             << "\n B : " << b << endl;
-    }
+#include <iostream>
+#include "Link1.hpp"
+
+void Access1 ::Swap(int a, int b)
+{
+    a = a + 10;
+    b = b + 10;
+    std :: cout << "Swapped Elements" << std :: endl
+         << " A : " << a
+         << "\n B : " << b << std :: endl;
+}

@@ -1,14 +1,8 @@
-#include <iostream>
-using std ::cout;
-using std ::endl;
+#pragma once
+
 
 class Access1
 {
-public:
-    int digit = 10;
-
-public:
-    void Swap(int a, int b)
-    {
-    }
+ public: 
+    virtual void Swap(int a, int b) = 0;
 };
