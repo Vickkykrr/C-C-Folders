@@ -6,6 +6,8 @@
 
 // #pragma once
 
+int arr[4][5] = {{0}, {0}};
+
 class Map
 {
 private:
@@ -30,7 +32,14 @@ public:
     std::vector<std::function<int()>> Vector3;
     std::vector<std::function<int()>> Vector4;
 
-    void RegisterCallback(std::function<int()> Function)
+    std::vector<std::function<int()>>::iterator itrVector;
+    itrVector = (itrMap).second.begin();
+
+    itrVector++;
+
+    itrMap++;
+
+    void RegisterCallback(std::function<int()> Function, int value)
     {
         while (itrMap != MapFn.end())
         {
@@ -39,28 +48,44 @@ public:
         }
     }
 
-    void CallEveryone()
+    void CallEveryone(int VectorSize)
     {
-        int i=0, j=0, arr[4][5];
+        // std::cout << itrMap->
+        static int i = 0;
+        std::cout << "Enter " << VectorSize << " Vector Values \n";
+        int j = 0;
         for (auto &mapItr : MapFn)
         {
-            // std::cout << "Value Of The Key "<< mapItr.first << "Are : ";
             for (auto &vectorItr : mapItr.second)
             {
-                arr[i][j++]= vectorItr();
+                vectorItr();
             }
-            j=0;
-            i++;
         }
+        i++;
+    }
 
-        // for (itrMap = MapFn.begin(); itrMap != MapFn.end(); itrMap++)
-        // {
-        //     std::cout << "Values of the Key \"" << itrMap->first << "\" : ";
-        //     for (auto itrVector = itrMap->second.begin(); itrVector != itrMap->second.end(); itrVector++)
-        //     {
-        //         std::cout << (itrVector) << " ";
-        //     }
-        //     std::cout << std::endl;
-        // }
+    void GetValues(int VectorSize)
+    {
+        std::cout << "The Vector Values are : \n";
+
+        for (int itr1 = 0; itr1 < 4; itr1++)
+        {
+            for (int itr2 = 0; itr2 < VectorSize; itr2++)
+            {
+                std::cout << arr[itr1][itr2] << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << ;
     }
 };
+
+// for (itrMap = MapFn.begin(); itrMap != MapFn.end(); itrMap++)
+// {
+//     std::cout << "Values of the Key \"" << itrMap->first << "\" : ";
+//     for (auto itrVector = itrMap->second.begin(); itrVector != itrMap->second.end(); itrVector++)
+//     {
+//         std::cout << (itrVector) << " ";
+//     }
+//     std::cout << std::endl;
+// }
