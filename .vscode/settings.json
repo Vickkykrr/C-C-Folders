@@ -35,5 +35,5 @@
         "utility": "cpp",
         "map": "cpp"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }

@@ -12,10 +12,12 @@ int InputValues()
 int main()
 {
     Testing Test;
+
     int size = 0;
 
     std::cout << "Enter The Size\n";
     std::cin >> size;
+    
     std::cout << "Enter " << size <<" Values\n";
     while ((size--) != 0)
     {
