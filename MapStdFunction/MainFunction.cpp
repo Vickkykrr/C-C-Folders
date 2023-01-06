@@ -3,24 +3,27 @@
 
 int Feed()
 {
-    int value;
-    std::cin >> value;
-    return value
+    int value = 0;
+    // std::cin >> value;
+    std::cout << "OK" << std::endl;
+    return value;
 }
 
 int main()
 {
     Map Obj;
 
-    int VectorSize = 0, VectorCount = 4;
+    int vectorSize = 0, vectorCount = 4;
 
     std::cout << "Enter The size of the Vector Values\n";
-    std::cin >> VectorSize;
+    std::cin >> vectorSize;
 
-    while ((VectorCount--) != 0)
-    {
-        Obj.RegisterCallback(Feed);
-        Obj.CallEveryone(VectorSize);
-    }
-    Obj.GetValues(VectorSize);
+    Obj.RegisterCallback(Feed, 1);
+    Obj.RegisterCallback(Feed, 2);
+    Obj.RegisterCallback(Feed, 1);
+    Obj.RegisterCallback(Feed, 1);
+
+    Obj.CallEveryone(2);
+
+    // Obj.GetValues(vectorSize);
 }
