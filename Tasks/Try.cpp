@@ -27,20 +27,15 @@ void ReadInputValues()
     dataStore[1] = EnterValues;
     dataStore[2] = Main;
 
+    
     int choice = 0;
 
     cout << "1.Enter values ." << endl << "2.Back" << endl;
     cout << "Enter operation to perform : ";
     cin >> choice;
    
-    for(itr = dataStore.begin() ; itr != dataStore.end() ; itr++)
-    {
-        if(choice == itr-> first)
-        {
-            itr->second();
-            break;
-        }
-    }
+    dataStore[choice]();
+
 }
 
 void EnterValues()
@@ -53,14 +48,14 @@ void EnterValues()
 
     if(choice == 1)
     {
-        cout << "Enter value1 = ";
+        cout << "Enter value1 : ";
         cin >> value1;
         EnterValues();
     }
 
     else if(choice == 2)
     {
-        cout << "Enter value2 = ";
+        cout << "Enter value2 : ";
         cin >> value2;
         EnterValues();
     }
@@ -74,20 +69,17 @@ void EnterValues()
 void DisplayValues()
 {
     cout<< "Value 1 = " << value1 << "." << endl << "Value 2 = " << value2 << "." << endl << endl;
-    main();
 }
 
 void ResetValues()
 {
     value1 = 0;
     value2 = 0;
-    main();
 }
 
 void ExitCode()
 {
     flag = 1;
-    main();
 }
 
 int main()
@@ -116,24 +108,8 @@ int main()
 
         cout << "Enter operation to perform : ";
         cin >> choice;
-
         
-        itr = Menu.begin();
-        //itr+=;
-        // for(itr = Menu.begin() ; itr != Menu.end() ; itr++)
-        // {
-        //     if(choice == itr-> first)
-        //     {
-        //         itr->second();
-        //         break;
-        //     }
-        // }
-        while(choice--)
-        {
-            itr++;
-        }
-        itr->second();
-        break;
-
+         Menu[choice]();
+        
     }
 }

@@ -18,7 +18,8 @@ void Operation(void (*Ptr)())
 };
 int main()
 {
-    void (*Ptr)() = &Increment;
+    void (*Ptr)();
+    Ptr() = &Increment;
     Operation(Ptr);
     cout << "Increment is Done\n";
     // Operation(&Decrement);
